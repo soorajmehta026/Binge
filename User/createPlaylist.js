@@ -20,8 +20,8 @@ const authToken = localStorage.getItem('authToken');
 
 const existing= async ()=>{
   console.log("triggered");
-    let url = `https://www.omdbapi.com/?t=${movieName}&apikey=414c04de`;
-    const resp = await fetch(url);
+    let url2 = `https://www.omdbapi.com/?t=${movieName}&apikey=414c04de`;
+    const resp = await fetch(url2);
     
     const data = await resp.json();
   const object={

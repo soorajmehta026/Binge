@@ -90,3 +90,10 @@ body {
     display: block;
    
 }
+
+@media screen and (max-width: 600px) {
+    .playlist-container{
+        width: 95%;
+    }
+
+}
