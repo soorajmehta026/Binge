@@ -27,12 +27,13 @@ app.listen(process.env.PORT || 5000, async () => {
 });
 
 app.get("/", async(req, res) => {
-  await database();
+  
   
  res.json("hi");
 });
 
 app.post("/login", async (req, res) => {
+  await database();
   try {
     const foundUser = await user.findOne({ username: req.body.username });
     if (foundUser) {
@@ -87,6 +88,7 @@ app.post("/login", async (req, res) => {
 });
 
 app.post("/signup", async (req, res) => {
+  await database();
   console.log(req.body);
   const resp = await user.findOne({ username: req.body.username });
 
@@ -125,7 +127,7 @@ app.post("/signup", async (req, res) => {
 
 app.post('/playlist',authenticateToken, async (req,res)=>{
 
-  console.log("auto hoga");
+  await database();
   
  try{
   const newPlaylist = new playlist(req.body);
@@ -153,7 +155,7 @@ app.post('/playlist',authenticateToken, async (req,res)=>{
 
 app.put('/playlist',authenticateToken, async (req, res) => {
   
- console.log(req.body);
+  await database();
   try {
     // Find the playlist based on name and username
     const existingPlaylist = await playlist.findOne({ name:req.body.playlist, username: req.body.username });
@@ -182,7 +184,7 @@ app.put('/playlist',authenticateToken, async (req, res) => {
   }
 });
 app.get('/playlists/:username',authenticateToken, async (req, res) => {
-  console.log("request aai");
+  await database();
   const username = req.params.username;
   console.log(username);
   try {
@@ -196,7 +198,7 @@ app.get('/playlists/:username',authenticateToken, async (req, res) => {
   }
 });
 app.get('/public/playlists',authenticateToken, async (req, res) => {
-  
+  await database();
   try {
     // Find all public playlists
     const publicPlaylists = await playlist.find({ isPublic: true });
@@ -209,7 +211,7 @@ app.get('/public/playlists',authenticateToken, async (req, res) => {
 });
 app.get('/playlist/:playlistname',authenticateToken, async (req, res) => {
   const playlistname = req.params.playlistname;
-
+  await database();
   try {
       // Find the playlist by name
       const data = await playlist.findOne({ name: playlistname });
