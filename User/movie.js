@@ -10,7 +10,8 @@ const authToken = localStorage.getItem('authToken');
 
 header.innerHTML=`Movies of playlist ${playlistName}`
 const url=`https://binge-gamma.vercel.app`;
-fetch(`${url}/playlist/${playlistName}`,{
+const url1="http://localhost:5000";
+fetch(`${url1}/playlist/${playlistName}`,{
     method: 'GET',
     headers: {
       'authorization': `Bearer ${authToken}`

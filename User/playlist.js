@@ -7,8 +7,9 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const username=decodeURIComponent(urlParams.get('username'));
 const authToken = localStorage.getItem('authToken');
-const url=`https://binge-gamma.vercel.app`
-fetch(`${url}/public/playlists`,{
+const url=`https://binge-gamma.vercel.app`;
+const url1="http://localhost:5000";
+fetch(`${url1}/public/playlists`,{
     method: 'GET',
     headers: {
       'authorization': `Bearer ${authToken}`
@@ -52,7 +53,7 @@ fetch(`${url}/public/playlists`,{
     });
 
 
-fetch(`${url}/playlists/${username}`, {
+fetch(`${url1}/playlists/${username}`, {
     method: 'GET',
     headers: {
         'authorization': `Bearer ${authToken}`

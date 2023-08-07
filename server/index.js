@@ -17,13 +17,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(
-  session({
-    secret: "your_secret_key_here", // Change this to a strong secret key
-    resave: false,
-    saveUninitialized: true,
-  })
-);
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -35,8 +29,7 @@ app.listen(process.env.PORT || 5000, async () => {
 });
 
 app.get("/", (req, res) => {
-  const indexPath = path.join(__dirname, "User", "index.html");
-  res.sendFile(indexPath);
+ res.send("hi");
 });
 
 app.post("/login", async (req, res) => {
