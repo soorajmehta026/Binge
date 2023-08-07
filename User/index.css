@@ -217,7 +217,10 @@ p {
   background-color: #ff6b6b;
   color: white;
 }
-.playlistButton {
+.playlistButton{
+  display: none;
+}
+.playlistButton:not(.hidden) {
   margin-top: 15px;
   margin-left: 18%;
   margin-right: 18%;
@@ -236,7 +239,7 @@ p {
 }
 
 
-.playlistButton:hover {
+.playlistButton:hover:not(.hidden) {
   background-color: #18be3f;
   color: white;
 }

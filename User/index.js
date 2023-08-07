@@ -35,6 +35,7 @@ const reload =()=>{
       loginButton.textContent = username;
       playlistButton.disabled = false; 
       logoutButton.disabled= false;
+      playlistButton.classList.remove('hidden');
     }
 }
 
