@@ -19,6 +19,7 @@ playlist.addEventListener("click",()=>{
 
 logoutButton.addEventListener("click",()=>{
   localStorage.removeItem("name");
+  localStorage.removeItem("authToken")
   playlistButton.disabled = true; 
   window.location.href=`index.html`;
 })
