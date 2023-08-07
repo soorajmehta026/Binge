@@ -9,9 +9,9 @@ const username=decodeURIComponent(urlParams.get('username'));
 const authToken = localStorage.getItem('authToken');
 
 header.innerHTML=`Movies of playlist ${playlistName}`
-const url=`https://binge-gamma.vercel.app`;
+const url=`https://binge-chi.vercel.app`;
 const url1="http://localhost:5000";
-fetch(`${url1}/playlist/${playlistName}`,{
+fetch(`${url}/playlist/${playlistName}`,{
     method: 'GET',
     headers: {
       'authorization': `Bearer ${authToken}`

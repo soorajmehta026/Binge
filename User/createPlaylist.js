@@ -5,7 +5,7 @@ const addButton = document.getElementById('add-button');
 
 
 
-const url=`https://binge-gamma.vercel.app`
+const url=`https://binge-chi.vercel.app`
 const url1="http://localhost:5000";
 
 const queryString = window.location.search;
@@ -32,7 +32,7 @@ const existing= async ()=>{
   const header=document.getElementById('header');
   header.innerHTML=`Add ${data.Title} to Playlist`
     try{
-        const resp=await fetch(`${url1}/playlists/${username}`, {
+        const resp=await fetch(`${url}/playlists/${username}`, {
             method: 'GET',
             headers: {
               'authorization': `Bearer ${authToken}`
@@ -93,7 +93,7 @@ addButton.addEventListener('click', async () => {
   try{
 
   
-  const response = await fetch(`${url1}/playlist`, {
+  const response = await fetch(`${url}/playlist`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -118,7 +118,7 @@ addButton.addEventListener('click', async () => {
  }
  else{
 try{
-  const response = await fetch(`${url1}/playlist`, {
+  const response = await fetch(`${url}/playlist`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

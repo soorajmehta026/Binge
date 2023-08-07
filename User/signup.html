@@ -24,7 +24,7 @@
  
 
 <script>
-  const url=`https://binge-gamma.vercel.app`;
+  const url=`https://binge-chi.vercel.app`;
   const url1="http://localhost:5000";
   const form = document.querySelector('.signup-form');
   form.addEventListener('submit', async (event) => {
@@ -39,7 +39,7 @@
     });
 
     try {
-      const response = await fetch(`${url1}/signup`, {
+      const response = await fetch(`${url}/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
