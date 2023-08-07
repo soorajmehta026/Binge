@@ -8,7 +8,7 @@ import bodyParser from "body-parser";
 import bcrypt from "bcrypt";
 import { playlist } from "./database/schema.js";
 import jwt from "jsonwebtoken";
-import authenticateToken from "./auth.js";
+import authenticateToken from "./auth/auth.js";
 import cors from 'cors';
 
 
