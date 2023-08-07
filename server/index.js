@@ -27,6 +27,7 @@ app.listen(process.env.PORT || 5000, async () => {
 });
 
 app.get("/", async(req, res) => {
+  await database();
   const foundUser = await user.findOne({ username:"sooraj__mehta2" });
 console.log("foundu ",foundUser);
  res.json(foundUser);
