@@ -6,7 +6,6 @@ import { user } from "./database/schema.js";
 import database from "./database/mongodb.js";
 import bodyParser from "body-parser";
 import bcrypt from "bcrypt";
-import session from "express-session";
 import { playlist } from "./database/schema.js";
 import jwt from "jsonwebtoken";
 import authenticateToken from "./auth.js";
@@ -14,10 +13,10 @@ import cors from 'cors';
 
 
 const app = express();
-app.use(cors());
+
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(cors());
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
