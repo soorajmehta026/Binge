@@ -13,8 +13,12 @@ console.log(username);
 
 playlist.addEventListener("click",()=>{
  
-  console.log(username);
-  window.location.href=`createPlaylist.html?username=${username}&movie=${storedMovieTitle}`
+  if(username.length==0)
+  {
+    window.location.href=`login.html`;
+
+  }
+ else window.location.href=`createPlaylist.html?username=${username}&movie=${storedMovieTitle}`
 })  
 
 logoutButton.addEventListener("click",()=>{
