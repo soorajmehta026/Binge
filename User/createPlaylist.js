@@ -5,7 +5,7 @@ const addButton = document.getElementById('add-button');
 
 
 
-const url=`https://binge-woad.vercel.app`
+const url=`https://binge-gamma.vercel.app`
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);

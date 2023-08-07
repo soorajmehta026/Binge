@@ -9,7 +9,7 @@ const username=decodeURIComponent(urlParams.get('username'));
 const authToken = localStorage.getItem('authToken');
 
 header.innerHTML=`Movies of playlist ${playlistName}`
-const url=`https://binge-woad.vercel.app`;
+const url=`https://binge-gamma.vercel.app`;
 fetch(`${url}/playlist/${playlistName}`,{
     method: 'GET',
     headers: {
