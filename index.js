@@ -10,9 +10,11 @@ import session from "express-session";
 import { playlist } from "./database/schema.js";
 import jwt from "jsonwebtoken";
 import authenticateToken from "./auth.js";
+import cors from 'cors';
 
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
