@@ -7,7 +7,7 @@ const pass=process.env.PASS;
 
 
 
-const url=`mongodb+srv://${name}:${pass}@cluster0.n7io8h3.mongodb.net/?retryWrites=true&w=majority`
+const url=`mongodb+srv://surajmehta026:Tantan123@cluster0.n7io8h3.mongodb.net/?retryWrites=true&w=majority`
 
 
 export default async function database(){
