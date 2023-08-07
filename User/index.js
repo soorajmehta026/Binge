@@ -41,7 +41,7 @@ const reload =()=>{
 
 let getMovie = async () => {
   let movieName = movieNameRef.value;
-  let url = `http://www.omdbapi.com/?t=${movieName}&apikey=${key}`;
+  let url = `http://www.omdbapi.com/?t=${movieName}&apikey=414c04de`;
   
 
   if (movieName.length <= 0) {
