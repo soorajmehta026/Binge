@@ -18,17 +18,18 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-app.use(express.static(path.join(__dirname, "User")));
+
+
 
 app.listen(process.env.PORT || 5000, async () => {
   console.log(`listening on PORT`);
   await database();
 });
 
-app.get("/", (req, res) => {
- res.send("hi");
+app.get("/", async(req, res) => {
+  const foundUser = await user.findOne({ username:"sooraj__mehta2" });
+console.log("foundu ",foundUser);
+ res.json(foundUser);
 });
 
 app.post("/login", async (req, res) => {
