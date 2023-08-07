@@ -125,32 +125,44 @@ app.post("/signup", async (req, res) => {
 
 
 
-app.post('/playlist',authenticateToken, async (req,res)=>{
-
+app.post('/playlist', authenticateToken, async (req, res) => {
   await database();
-  
- try{
-  const newPlaylist = new playlist(req.body);
-  const resp=await newPlaylist.save();
-  return res
-  .status(200)
-  .json({
-    id:resp._id,
-    status: 200,
-    success: true,
-    message: "movie saved successfully",
-  });
 
- }
- catch(err){
-  console.log(err);
-  return err;
+  try {
+    
 
- }
-  
+    // Check if the playlist already exists based on name and username
+    const existingPlaylist = await playlist.findOne({ name:req.body.name, username: req.body.username });
 
+    if (existingPlaylist) {
+      // Playlist exists, add the movie to the existing playlist
+      const movieExists = existingPlaylist.movies.some(m => m.name === req.body.movies[0].name);
+      if (!movieExists) {
+        existingPlaylist.movies.push(req.body.movies[0]);
+        await existingPlaylist.save();
+      }
 
-
+      return res.status(200).json({
+        id: existingPlaylist._id,
+        status: 200,
+        success: true,
+        message: "Movie added to playlist successfully",
+      });
+    } else {
+      // Playlist does not exist, create a new playlist
+      const newPlaylist = new playlist(req.body);
+      const resp = await newPlaylist.save();
+      return res.status(200).json({
+        id: resp._id,
+        status: 200,
+        success: true,
+        message: "Playlist created and movie saved successfully",
+      });
+    }
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ status: 500, error: err.message });
+  }
 });
 
 app.put('/playlist',authenticateToken, async (req, res) => {
