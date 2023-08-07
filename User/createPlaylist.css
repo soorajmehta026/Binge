@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    
+   
+    background-color: black;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8em 2em; 
+    background-color: #282c34;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: 10%;
+  }
+  
+  .navbar-brand {
+    font-size: 1.3em; 
+  }
+  
+  .site-name {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    position: relative;
+    margin-top: 15px;
+    
+    padding:  1.8em;
+    background-color: #201f28;
+    
+    border-radius: 0.6em;
+    box-shadow: 1.2em 2em 3em rgba(0, 0, 0, 0.2);
+    
+     
+    
+    transform: none;
+    
+  
+  }
+  input {
+    max-width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    color: black;
+  }
+  
+  input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    color: black;
+  }
+  
+  
+  input:not(:last-child) {
+    margin-bottom: 10px;
+    color: black;
+  }
+
+  h1 {
+    text-align: center;
+    color: rgb(247, 199, 9);
+  }
+
+  
+  #playlist-list, #movie-name, #add-button {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 5px;
+    width: 40%;
+    color: white;
+    
+  }
+
+  
+  
+  
+ 
+#playlist-list {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px; 
+    align-items: center;
+    font-weight: bold;
+     
+    
+  }
+  
+  
+  #playlist-list input[type="checkbox"] {
+    display: none;
+  }
+  
+  #playlist-list label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+  }
+  
+  #playlist-list label:hover {
+    background-color:rgb(247, 199, 9);
+    color: white;
+  }
+  
+  
+  #playlist-list input[type="checkbox"]:checked + label {
+    background-color: green;
+    color: white;
+  }
+  
+  #add-button {
+    display: inline-block;
+    align-items: center;
+    background-color: #18be3f;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    max-width: 25%;
+    margin-top: 15px;
+  }
+  
+  #add-button:hover {
+    background-color: #149134;
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    color: white;
+  }
+  
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+
+  @media screen and (max-width: 480px) {
+   
+  }

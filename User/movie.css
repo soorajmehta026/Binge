@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #201f28;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8em 2em; 
+    background-color: #282c34;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: 10%;
+  }
+  
+  .navbar-brand {
+    font-size: 1.3em; 
+  }
+  
+  .site-name {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+.playlist-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #201f28 ;
+}
+
+.movie-card {
+    width: 200px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-poster {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.movie-title {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+.playlistName {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+     
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    margin-top:15px;
+}
+@media screen and (max-width: 600px) {
+    .playlist-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Guide App</title>
+    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+  
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="index.html" class="site-name">Binge</a>
+      </div>
+      <div class="navbar-buttons">
+        <button class="login-button"><a href="login.html">Login</a></button>
+        <button class="logout-button" id="logout-button" disabled >Logout</button>
+        <button class="playlist-button" id="playlist-button"  disabled >Playlist</button>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="search-container">
+        <input
+          type="text"
+          placeholder="Search your movie here..."
+          id="movie-name"
+          value="Iron man"
+        />
+        <button id="search-btn">Search</button>
+      </div>
+      <div id="result"></div>
+      <div class="playlistButton" id="play">
+        <h4>+ Playlist</h4>
+      </div>
+    </div>
+    <script src="key.js"></script>
+    <script src="index.js"></script>
+   
+    
+  </body>
+</html>
