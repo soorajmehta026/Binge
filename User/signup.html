@@ -24,6 +24,7 @@
  
 
 <script>
+  const url=`https://binge-woad.vercel.app`;
   const form = document.querySelector('.signup-form');
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -37,7 +38,7 @@
     });
 
     try {
-      const response = await fetch('/signup', {
+      const response = await fetch(`${url}/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

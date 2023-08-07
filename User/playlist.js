@@ -7,8 +7,8 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const username=decodeURIComponent(urlParams.get('username'));
 const authToken = localStorage.getItem('authToken');
-
-fetch(`/public/playlists`,{
+const url=`https://binge-woad.vercel.app`
+fetch(`${url}/public/playlists`,{
     method: 'GET',
     headers: {
       'authorization': `Bearer ${authToken}`
@@ -52,7 +52,7 @@ fetch(`/public/playlists`,{
     });
 
 
-fetch(`/playlists/${username}`, {
+fetch(`${url}/playlists/${username}`, {
     method: 'GET',
     headers: {
         'authorization': `Bearer ${authToken}`
